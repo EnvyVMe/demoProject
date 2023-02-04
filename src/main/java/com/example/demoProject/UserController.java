@@ -18,6 +18,10 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
+    public UserController() {
+        userRepository = null;
+    }
+
     @GetMapping("/users")
     public List<User> getUsers() {
         return (List<User>) userRepository.findAll();
